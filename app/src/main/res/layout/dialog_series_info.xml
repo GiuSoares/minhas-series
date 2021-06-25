@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   tools:context ="br.com.giugiu.seriesfilter.widget.DetalhesSeriesDialog"
+   >
+
+   <data>
+      <variable
+         name="serie"
+         type="br.com.giugiu.seriesfilter.dataBase.SeriesModel" />
+   </data>
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+
+      <TextView
+         android:id="@+id/minhasSeries"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginHorizontal="50dp"
+         android:text="Minhas Séries"
+         android:textSize="30sp"
+         app:layout_constraintBottom_toTopOf="@id/guide_dialog"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintVertical_bias="0.45" />
+
+      <com.google.android.material.textfield.TextInputLayout
+         android:id="@+id/tilNome"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:hint="@string/nome"
+         errorText='@{serie.nome}'
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/guide_dialog"
+         style="@style/InputLayoutStyle">
+
+         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={serie.nome}"
+            android:ems="12"
+            android:inputType="textPersonName" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+         android:id="@+id/tilServico"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="@dimen/dialog_item_top"
+         android:hint="Serviço"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/tilNome"
+         style="@style/InputLayoutStyle">
+
+         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etServico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{serie.servico}"
+            android:ems="12"
+            android:inputType="textPersonName" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+         android:id="@+id/tilAno"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="@dimen/dialog_item_top"
+         android:hint="Ano"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/tilServico"
+         style="@style/InputLayoutStyle">
+
+         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etAno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{serie.ano}"
+            android:ems="12"
+            android:inputType="textPersonName" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+         android:id="@+id/tilTemporadas"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="@dimen/dialog_item_top"
+         android:hint="Temporadas"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/tilAno"
+         style="@style/InputLayoutStyle">
+
+         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTemporadas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{serie.quantidadeTemporadas}"
+            android:inputType="textPersonName"
+            android:ems="12" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+         android:id="@+id/tilEpisodios"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="@dimen/dialog_item_top"
+         android:hint="Episódios"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/tilTemporadas"
+         style="@style/InputLayoutStyle">
+
+         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEpisodios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{serie.quantidadeEpisodios}"
+            android:inputType="textPersonName"
+            android:ems="12" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+         android:id="@+id/tilGenero"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="@dimen/dialog_item_top"
+         android:hint="Gênero"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/tilEpisodios"
+         style="@style/InputLayoutStyle">
+
+         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etGenero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{serie.genero}"
+            android:inputType="textPersonName"
+            android:ems="12" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <Button
+         android:id="@+id/btSalvar"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginVertical="@dimen/dialog_item_top"
+         android:text="Salvar"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toStartOf="@+id/btExcluir"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/tilGenero" />
+
+      <Button
+         android:id="@+id/btExcluir"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginVertical="@dimen/dialog_item_top"
+         android:text="Excluir"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toEndOf="@id/btSalvar"
+         app:layout_constraintTop_toBottomOf="@+id/tilGenero" />
+
+      <androidx.constraintlayout.widget.Guideline
+         android:id="@+id/guide_dialog"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         app:layout_constraintGuide_percent="0.2" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

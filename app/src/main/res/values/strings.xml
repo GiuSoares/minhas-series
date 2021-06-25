@@ -1,0 +1,11 @@
+<resources>
+   <string name="app_name">SeriesFilter</string>
+
+   <!-- valores para dialog -->
+   <string name="titulo">Minhas Séries</string>
+   <string name="year">Ano</string>
+   <string name="nome">Nome</string>
+
+   <!--  valores de Toast -->
+   <string name="toast_saved">Série Salva</string>
+</resources>

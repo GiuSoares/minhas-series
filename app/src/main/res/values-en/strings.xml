@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="app_name">SeriesFilter</string>
+
+   <!-- strings for dialog -->
+   <string name="titulo">My Series</string>
+   <string name="year">Year</string>
+   <string name="nome">Name</string>
+   <string name="toast_saved">Serie Saved</string>
+</resources>

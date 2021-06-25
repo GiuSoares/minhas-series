@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+   android:id="@+id/nav_graph"
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   app:startDestination="@id/menuFragment"
+   >
+
+   <fragment
+      android:id="@+id/menuFragment"
+      android:name="br.com.giugiu.seriesfilter.frags.MenuFragment"
+      android:label=""
+      tools:layout="@layout/fragment_menu"
+      >
+
+      <action
+         android:id="@+id/goes_Menu_to_Listar"
+         app:destination="@id/listaFragment" />
+      <action
+         android:id="@+id/goes_Menu_to_Adicionar"
+         app:destination="@id/adicionarFragment" />
+   </fragment>
+
+   <fragment
+      android:id="@+id/listaFragment"
+      android:name="br.com.giugiu.seriesfilter.frags.ListaSeriesFragment"
+      android:label=""
+      tools:layout="@layout/fragment_lista_series"
+      >
+      <action
+         android:id="@+id/goes_Listar_to_Adicionar"
+         app:destination="@id/adicionarFragment" />
+   </fragment>
+
+   <fragment
+      android:id="@+id/adicionarFragment"
+      android:name="br.com.giugiu.seriesfilter.frags.AdicionarSeriesFragment"
+      android:label=""
+      tools:layout="@layout/dialog_series_info"
+      />
+
+</navigation>
